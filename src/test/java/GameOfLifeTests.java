@@ -1,28 +1,29 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class GameOfLifeTests {
 
+    String[][] grid = {{"+", "+", "+", "+", "+", "+", "+", "+", "+", "+"}, {"+", "+", "+", "+", "+", "+", "+", "+", "+", "+"}, {"+", "+", "+", "+", "#", "+", "+", "+", "+", "+"},
+            {"+", "+", "+", "+", "#", "#", "#", "+", "+", "+"}, {"+", "+", "+", "+", "+", "+", "+", "+", "+", "+"}, {"+", "+", "+", "+", "+", "+", "+", "+", "+", "+"},
+            {"+", "+", "+", "+", "+", "+", "+", "+", "+", "+"}, {"+", "+", "+", "+", "+", "+", "+", "+", "+", "+"}, {"+", "+", "+", "+", "+", "+", "+", "+", "+", "+"},
+            {"+", "+", "+", "+", "+", "+", "+", "+", "+", "+"}
+    };
 
     @Test
-    @DisplayName("This test should test Any live cell with fewer than two live neighbors dies")
-    public void anyLiveCellWithFewerThanTwoliveNeighborsDiesTest(){
+    @DisplayName("This test should test the generation of the next generation in the game of life")
+    void nextGeneration() {
+        assertEquals("++++++++++\n" +
+                "++++++++++\n" +
+                "++++#+++++\n" +
+                "++++##++++\n" +
+                "+++++#++++\n" +
+                "++++++++++\n" +
+                "++++++++++\n" +
+                "++++++++++\n" +
+                "++++++++++\n" +
+                "++++++++++\n",GameOfLife.converter(grid));
     }
 
-    @Test
-    @DisplayName("This test should test Any live cell with two or three live neighbors lives on to the next generation")
-    public void anyLiveCellWithTwoOrThreeLiveNeighborsLivesTest(){
-
-    }
-
-    @Test
-    @DisplayName("Test should test Any live cell with more than three live neighbors dies")
-    public void anyLiveCellMoreWithThanThreeLiveNeighborsDiesTest(){
-
-    }
-    @Test
-    @DisplayName("This test should Any dead cell with exactly three live neighbors becomes a live cell")
-    public void anyDeadCellWithThreeLiveNeighborsBecomesALiveCellTest(){
-
-    }
 }
